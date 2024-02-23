@@ -4,7 +4,7 @@ import PostCardList from './components/PostCardList'
 function App() {
 
   return (
-    <div className='m-4 mx-16 p-0 text-center'>
+    <div className='mt-8 text-center flex flex-col justify-center items-center'>
       <Typography title="L2E CRUD" />
       <PostCardList />
     </div>

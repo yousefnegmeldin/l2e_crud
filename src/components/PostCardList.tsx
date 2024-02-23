@@ -3,7 +3,8 @@ import PostCard from './PostCard'
 
 const PostCardList:FC = () => {
   return (
-    <div className='m-16 grid grid-cols-4 gap-4'>
+    <div className='p-16 grid grid-cols-4 gap-12'>
+        <PostCard />
         <PostCard />
         <PostCard />
         <PostCard />
