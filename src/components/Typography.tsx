@@ -1,9 +1,13 @@
-import React from 'react'
+import React,{FC} from 'react'
 
-const Typography = ({title}) => {
+type TypographyProps = {
+    title:string
+}
+
+const Typography:FC<TypographyProps> = (props) => {
   return (
-    <div className='text-7xl'>
-        {title}
+    <div className='text-6xl'>
+        {props.title}
     </div>
   )
 }
