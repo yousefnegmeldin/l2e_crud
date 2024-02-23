@@ -6,7 +6,7 @@ type TypographyProps = {
 
 const Typography:FC<TypographyProps> = (props) => {
   return (
-    <div className='text-6xl'>
+    <div className='text-6xl font-sans font-bold'>
         {props.title}
     </div>
   )
