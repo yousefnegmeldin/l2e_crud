@@ -9,7 +9,7 @@ type PostCardProps = {
 
 const PostCard:FC<PostCardProps> = () => {
   return (
-  <div className="w-64 h-80 bg-[#eee] shadow-xl border-red-600 border">
+  <div className="w-64 h-80 bg-[#eee] shadow-xl  border">
     <div className="h-[60%] bg-[#ddd]">
       <img src="https://via.placeholder.com/300" alt="" className="w-full h-full object-cover" />
     </div>

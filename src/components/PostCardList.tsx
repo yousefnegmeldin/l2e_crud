@@ -1,5 +1,6 @@
 import React,{FC} from 'react'
 import PostCard from './PostCard'
+import PostCardCreator from './PostCreatorCard'
 
 const PostCardList:FC = () => {
   return (
@@ -9,6 +10,7 @@ const PostCardList:FC = () => {
         <PostCard />
         <PostCard />
         <PostCard />
+        <PostCardCreator />
     </div>
   )
 }
