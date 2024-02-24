@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Typography from '../components/Typography'
-import postsArr from '../data/Posts.js'
+import { usePosts } from '../data/PostsContext'
 const PostCreationForm = () => {
   const [title,setTitle] = useState('');
   const[file,setFile] = useState<string>();
-
+  const {setPostsArr} = usePosts();
 
   const handleTitleChange = (e:React.ChangeEvent<HTMLInputElement>)=>{
     setTitle(e.target.value);
@@ -27,7 +27,9 @@ const PostCreationForm = () => {
   }
 
   const uploadFile = async(fileObj:string)=>{
-    postsArr.push({title,fileObj});
+    setPostsArr(prevPostsArr=>{
+      setPostsArr([...prevPostsArr,{title:title,imageSrc:fileObj}])
+    })
     await new Promise(resolve => setTimeout(resolve, 1000));
     return;
   }
