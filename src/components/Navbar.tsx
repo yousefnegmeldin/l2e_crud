@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Typography from './Typography'
+import Button from './Button'
 
 const Navbar = () => {
   return (
@@ -11,7 +12,8 @@ const Navbar = () => {
         </div>
     
     <Link to="/createpost">
-        <button className='bg-blue-800 text-white shadow-2xl rounded-2xl h-12 w-32'>Create Post</button>
+      <Button text="Create Post"  />
+        
     </Link>
     </div>
   )

@@ -3,15 +3,14 @@ import React,{FC} from 'react'
 type PostCardProps = {
   title:string,
   imageSrc:string,
-  altText:string,
 }
 
 
-const PostCard:FC<PostCardProps> = () => {
+const PostCard:FC<PostCardProps> = (props) => {
   return (
   <div className="w-64 h-80 bg-[#eee] shadow-xl  border">
     <div className="h-[60%] bg-[#ddd]">
-      <img src="https://via.placeholder.com/300" alt="" className="w-full h-full object-cover" />
+      <img src={props.imageSrc} alt="" className="w-full h-full object-cover" />
     </div>
     <div className="flex h-[40%] flex-col justify-center items-center">
       <h2 className="text-2xl font-bold">Post Title</h2>

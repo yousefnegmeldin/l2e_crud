@@ -1,4 +1,5 @@
 import React,{FC} from 'react'
+import PaginationButton from './PaginationButton'
 
 type PaginationProps ={
     page:number,
@@ -13,19 +14,26 @@ const Pagination:FC<PaginationProps> = (props) => {
   const handlePrevClick = () => {
     if (props.page === 1) return;
     props.setPage((prevPage) => prevPage - 1)
+    
   }
 
   const handleNextClick = () => {
     if(props.page === props.totalPages) return;
     props.setPage((prevPage) => prevPage + 1)
+    console.log('ypyoyoo')
   }
 
   return (
     <div className='flex justify-center items-center gap-4 text-white'>
+      <div onClick={handlePrevClick}>
+      <PaginationButton text="PREV"/>
+      </div>
       
-      <button className='bg-blue-800 rounded-lg p-4 shadow-2xl' onClick={handlePrevClick} >PREV</button>
       <p className='text-black'>{props.page}</p>
-      <button className='bg-blue-800 rounded-lg p-4 shadow-xl' onClick={handleNextClick}>NEXT</button>
+      <div onClick={handleNextClick}>
+        <PaginationButton text="NEXT"/>
+      </div>
+      
     </div>
   )
 }

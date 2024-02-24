@@ -2,14 +2,11 @@ import React,{FC} from 'react'
 
 type ButtonProps = {
     text:string,
-    handlerFunction:void,
 }
 
-
-
-const Button:FC<ButtonProps> = (props) => {
+const PaginationButton:FC<ButtonProps> = (props) => {
     return (
-        <button className='bg-blue-800 rounded-lg p-4 shadow-xl' onClick={handlerFunction}>{props.text}</button>
+        <button className='bg-blue-800 rounded-lg p-4 shadow-xl'>{props.text}</button>
     )
 }
 

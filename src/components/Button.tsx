@@ -2,7 +2,7 @@ import React,{FC} from 'react'
 
 type ButtonProps = {
     text:string,
-    size:number,
+    size?:number,
 }
 
 const Button:FC<ButtonProps> = (props) => {
