@@ -22,6 +22,7 @@ const Pagination:FC<PaginationProps> = (props) => {
 
   return (
     <div className='flex justify-center items-center gap-4 text-white'>
+      
       <button className='bg-blue-800 rounded-lg p-4 shadow-2xl' onClick={handlePrevClick} >PREV</button>
       <p className='text-black'>{props.page}</p>
       <button className='bg-blue-800 rounded-lg p-4 shadow-xl' onClick={handleNextClick}>NEXT</button>
