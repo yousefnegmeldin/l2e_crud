@@ -31,7 +31,10 @@ const PostCreationForm = () => {
 
   const uploadFile = async (fileObj: string) => {
     setPostsArr((prevPostsArr) => {
-      return [...prevPostsArr, { title: title, imageSrc: fileObj }];
+      return [
+        ...prevPostsArr,
+        { title: title, imageSrc: fileObj, id: prevPostsArr.length },
+      ];
     });
     await new Promise((resolve) => setTimeout(resolve, 1000));
   };

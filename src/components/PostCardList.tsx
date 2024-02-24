@@ -8,6 +8,7 @@ const PostCardList: FC = () => {
   type PostCardProps = {
     title: string;
     imageSrc: string;
+    id: number;
   };
   const POSTS_PER_PAGE = 8;
   const { postsArr, setPostsArr } = usePosts();
@@ -20,7 +21,7 @@ const PostCardList: FC = () => {
     setPostsArr((prevPostsArr) => {
       const newPostsArr = [...prevPostsArr];
       for (let i = 0; i < 1; i++) {
-        newPostsArr.push({ title: "test", imageSrc: "test" });
+        newPostsArr.push({ title: "test", imageSrc: "test", id: i });
       }
       return newPostsArr;
     });
@@ -40,7 +41,12 @@ const PostCardList: FC = () => {
         {postsArr
           .slice(startIndex, endIndex)
           .map((post: PostCardProps, index: number) => (
-            <PostCard key={index} title={post.title} imageSrc={post.imageSrc} />
+            <PostCard
+              key={index}
+              title={post.title}
+              imageSrc={post.imageSrc}
+              id={post.id}
+            />
           ))}
       </div>
       <div className="pt-16">

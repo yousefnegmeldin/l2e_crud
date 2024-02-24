@@ -11,6 +11,7 @@ import React, {
 type Post = {
   title: string;
   imageSrc: string;
+  id: number;
 };
 
 type PostsContextType = {
