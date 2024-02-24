@@ -21,7 +21,11 @@ const PostCardList: FC = () => {
     setPostsArr((prevPostsArr) => {
       const newPostsArr = [...prevPostsArr];
       for (let i = 0; i < 1; i++) {
-        newPostsArr.push({ title: "test", imageSrc: "test", id: i });
+        newPostsArr.push({
+          title: "test",
+          imageSrc: "test",
+          id: prevPostsArr.length,
+        });
       }
       return newPostsArr;
     });
