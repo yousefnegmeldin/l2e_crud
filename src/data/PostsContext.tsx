@@ -1,4 +1,12 @@
-import React, { ReactNode, createContext, useContext, useState, FC } from 'react';
+import React, {
+  ReactNode,
+  createContext,
+  useContext,
+  useState,
+  FC,
+  Dispatch,
+  useCallback,
+} from "react";
 
 type Post = {
   title: string;
@@ -10,12 +18,24 @@ type PostsContextType = {
   setPostsArr: React.Dispatch<React.SetStateAction<Post[]>>;
 };
 
-const PostsContext = createContext<PostsContextType>({ postsArr: [], setPostsArr: () => {} });
+const PostsContext = createContext<PostsContextType>({
+  postsArr: [],
+  setPostsArr: React.Dispatch<React.SetStateAction<Post[]>>,
+});
 
 export const PostsProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [postsArr, setPostsArr] = useState<Post[]>([]);
+  const memoizedSetPostsArr = useCallback(
+    (newPostsArr: React.SetStateAction<Post[]>) => {
+      setPostsArr(newPostsArr);
+    },
+    [setPostsArr]
+  );
+
   return (
-    <PostsContext.Provider value={{ postsArr, setPostsArr }}>
+    <PostsContext.Provider
+      value={{ postsArr, setPostsArr: memoizedSetPostsArr }}
+    >
       {children}
     </PostsContext.Provider>
   );
