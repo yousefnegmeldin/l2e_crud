@@ -32,7 +32,7 @@ const PostCardList: FC = () => {
   };
 
   useEffect(() => {
-    fillTestArray();
+    // fillTestArray();
   }, []);
 
   useEffect(() => {
